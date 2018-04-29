@@ -1,5 +1,5 @@
 {
-  "name": "humescores",
+  "name": "constantores",
   "version": "0.0.1",
   "description": "Accessible WordPress theme utilizing flex layouts and modern development practices.",
   "main": "index.php",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mor10/humescores"
+    "url": "git+https://github.com/BrandConstantin/Constantores-WordPress-Repository"
   },
-  "author": "Morten Rand-Hendriksen",
+  "author": "Constantin Brindusoiu",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/mor10/humescores/issues"
+    "url": "https://github.com/BrandConstantin/Constantores-WordPress-Repository/issues"
   },
-  "homepage": "https://github.com/mor10/humescores#readme",
+  "homepage": "https://github.com/BrandConstantin/Constantores-WordPress-Repository#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.2",
     "browser-sync": "^2.17.6",

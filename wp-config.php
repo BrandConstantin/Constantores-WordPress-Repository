@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wp_news');
+define('DB_NAME', 'wp_create_theme');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -32,7 +32,7 @@ define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
@@ -46,14 +46,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'P_$)T<?S_q^:p|HCsb0x [ogmpuOZ4bfVaaQ`Jm((+$&A&eYe--_aE:qx<)fu)!A');
-define('SECURE_AUTH_KEY',  't[~~B(S+(6E<(`:$|9(l6quZMaR!tNWPC?6#5aveq9l{]<C,GT6NJx0!JOm?(:4V');
-define('LOGGED_IN_KEY',    'cd)34%#U{Q@1YeZr{1loIKh5gCOgo%T(SCeTb#}NylLo*Tzy=Tb!f/ M(^xE6RX]');
-define('NONCE_KEY',        'l;?xX9uMM%78tKCohIf>3YkuL=|&X8Sefz-]M#qY3/Z!(ucv_h#Y#s}o% y*$>E*');
-define('AUTH_SALT',        '^mxj1^-ZFX&&hK,{&)Xu,{d@S_!Q?U$v}M-:-&?]6=cM_rH4)u*n](90,62l<;L=');
-define('SECURE_AUTH_SALT', '<Gka.4nJjOfc[sampAgo]<[ 3Mt!xOfS6V:<6`BW-dp$arBRG~=o&})4B6kK3G/[');
-define('LOGGED_IN_SALT',   'EO 5eEv-$/nY^I@Vkn{9pE2b<gYVozo]b%C#|JH:;Zo>SE pA-Pz4L=@bdz#kcN!');
-define('NONCE_SALT',       'YWbF@ITzE]4,Bi+~SQo_Lu.t+(61|._Il{XdRuN=fDNlg@OY~!P(Zk-&jO.U9Cky');
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
@@ -77,7 +77,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', TRUE);
 
 /* That's all, stop editing! Happy blogging. */
 

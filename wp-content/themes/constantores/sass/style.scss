@@ -1,6 +1,6 @@
 /*!
 Theme Name: Constantores
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/BrandConstantin/Constantores-WordPress-Repository
 Author: Constantin Brindusoiu
 Author URI: https://www.linkedin.com/in/constantin-brindusoiu/
 Description: An awsome new Constantores-based theme for everyone
@@ -86,14 +86,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "site/site";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
 # Infinite scroll
