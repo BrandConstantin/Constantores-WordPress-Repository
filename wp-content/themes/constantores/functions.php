@@ -44,7 +44,8 @@ if ( ! function_exists( 'constantores_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'constantores' ),
+			'menu-1' => esc_html__( 'Primary Menu', 'constantores' ),
+            'menu-2' => esc_html__( 'Secondary Menu', 'constantores' ),
 		) );
 
 		/*
@@ -74,8 +75,8 @@ if ( ! function_exists( 'constantores_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 90,
+			'width'       => 90,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -184,8 +185,13 @@ function constantores_scripts() {
     
 	wp_enqueue_style( 'constantores-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'constantores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'constantores-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
+    wp_localize_script('constantores-navigation', 'constantoresScreenReaderText', array(
+        'expand' => __('Expand child menu', 'constantores'),
+        'collapse' => __('Collapse child menu', 'constantores'),
+    ));
+    
 	wp_enqueue_script( 'constantores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
