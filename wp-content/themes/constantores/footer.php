@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer
+ * The template for displaying the footer.
  *
  * Contains the closing of the #content div and all content after.
  *
@@ -13,19 +13,23 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php
+		// Make sure there is a social menu to display.
+		if ( has_nav_menu( 'social' ) ) { ?>
+		<nav class="social-menu">
+		<?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+		</nav><!-- .social-menu -->
+		<?php } ?>
+
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'constantores' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'constantores' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'constantores' ), 'constantores', '<a href="https://www.linkedin.com/in/constantin-brindusoiu/">Constantin Brindusoiu</a>' );
-				?>
+            <!--<span class="sep"> | </span>-->
+            <?php printf( esc_html__( 'Theme: %1$s by %2$s .', 'constantores' ), 'constantores', '<a href="https://www.linkedin.com/in/constantin-brindusoiu/" rel="designer">Constantin Brindusoiu</a>' ); ?>
+			
+            <span class="sep"> | </span>
+            
+            <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'constantores' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'constantores' ), 'WordPress' ); ?></a>		
+            <!--<span class="sep"> | </span>-->
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
