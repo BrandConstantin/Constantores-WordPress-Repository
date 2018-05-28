@@ -1,25 +1,25 @@
+@charset "UTF-8";
 /*!
 Theme Name: Constantores
-Theme URI: https://github.com/BrandConstantin/Constantores-WordPress-Repository
-Author: Constantin Brindusoiu
-Author URI: https://www.linkedin.com/in/constantin-brindusoiu/
-Description: An awsome new Constantores-based theme for everyone
+Theme URI: https://github.com/mor10/constantores/
+Author: Morten Rand-Hendriksen
+Author URI: https://mor10.com/courses
+Description: A new theme for a new time. This theme showcases the best of WordPress and Underscores and is the project for the Building Themes From Scratch Using Underscores course at LinkedIn Learning and Lynda.com.
 Version: 1.0.0
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: constantores
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Constantores is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Constantores is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -817,6 +817,53 @@ a:hover, a:active {
 	}
 }
 
+.site-content {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+	.has-sidebar .hentry {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+	.has-sidebar .hentry .entry-header {
+		width: 100%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 100%;
+		        flex: 1 0 100%;
+	}
+	.has-sidebar .hentry .post-content {
+		width: 60%;
+	}
+	.has-sidebar .hentry .widget-area {
+		width: 30%;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.no-sidebar .post-content__wrap {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+	.no-sidebar .post-content__wrap .entry-meta {
+		width: 20%;
+	}
+	.no-sidebar .post-content__wrap .post-content__body {
+		width: 70%;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
@@ -835,7 +882,7 @@ a:hover, a:active {
 	padding: 1em;
 	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	color: #fff;
-	background-color: #481C1C;
+	background-color: #002254;
 }
 
 @media screen and (min-width: 600px) {
@@ -1127,6 +1174,7 @@ button.dropdown-toggle {
 
 .entry-meta,
 .entry-footer {
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-size: 90%;
 }
 
@@ -1165,6 +1213,50 @@ button.dropdown-toggle {
 	display: inline;
 }
 
+.extra {
+	display: none;
+}
+
+/* Custom Post Meta rules for single post / no sidebar. */
+.no-sidebar .entry-meta {
+	margin-top: 1.5em;
+}
+
+@media screen and (min-width: 900px) {
+	.no-sidebar .post-content__wrap .entry-meta {
+		margin-top: 2.25em;
+		font-size: 80%;
+	}
+	.no-sidebar .post-content__wrap .entry-meta a {
+		font-size: 110%;
+		display: block;
+		border-bottom: 3px solid white;
+	}
+	.no-sidebar .post-content__wrap .entry-meta a:hover, .no-sidebar .post-content__wrap .entry-meta a:focus {
+		border-bottom-color: #b51c35;
+	}
+	.no-sidebar .post-content__wrap .byline,
+	.no-sidebar .post-content__wrap .posted-on,
+	.no-sidebar .post-content__wrap .comments-link,
+	.no-sidebar .post-content__wrap .edit-link {
+		display: block;
+		margin-bottom: 1em;
+	}
+	.no-sidebar .post-content__wrap .byline:before, .no-sidebar .post-content__wrap .byline:after,
+	.no-sidebar .post-content__wrap .posted-on:before,
+	.no-sidebar .post-content__wrap .posted-on:after,
+	.no-sidebar .post-content__wrap .comments-link:before,
+	.no-sidebar .post-content__wrap .comments-link:after,
+	.no-sidebar .post-content__wrap .edit-link:before,
+	.no-sidebar .post-content__wrap .edit-link:after {
+		margin: 0;
+		content: "";
+	}
+	.no-sidebar .post-content__wrap .extra {
+		display: inline;
+	}
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -1184,12 +1276,217 @@ button.dropdown-toggle {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.comments-area {
+	width: 100%;
+	margin: 3em 0;
+	padding: 1.5em 0;
+	border-top: 1px solid #cccccc;
+}
+
+.comments-title {
+	margin-bottom: 2em;
+	font-size: 2.5em;
+	font-weight: 900;
+}
+
+.comment-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.comment-list ol {
+	list-style-type: none;
+}
+
+.comment-body {
+	border-bottom: 1px solid #c3c3c3;
+	margin-bottom: 3em;
+}
+
+.comment-meta {
+	position: relative;
+	margin-left: 70px;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 80%;
+}
+
+.comment-meta a,
+.comment-form a {
+	text-decoration: none;
+	border: none;
+}
+
+.comment-meta a:hover, .comment-meta a:focus,
+.comment-form a:hover,
+.comment-form a:focus {
+	text-decoration: underline;
+}
+
+.comment .avatar {
+	position: absolute;
+	top: -5px;
+	left: -70px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+
+.children {
+	margin-left: 1em;
+	padding-left: 0;
+}
+
+@media screen and (min-width: 900px) {
+	.children {
+		margin-left: 2em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.no-sidebar .children {
+		margin-left: 2em;
+	}
+	.no-sidebar .children .comment-meta {
+		margin-left: 80px;
+		font-size: 90%;
+	}
+	.no-sidebar .children .comment .avatar {
+		top: -7px;
+		left: -80px;
+		width: 60px;
+		height: 60px;
+	}
+	.no-sidebar .children .comment-content {
+		margin-left: 80px;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.no-sidebar .children {
+		margin-left: 3em;
+	}
+	.no-sidebar .comment-meta {
+		margin-left: 90px;
+	}
+	.no-sidebar .comment .avatar {
+		top: -8px;
+		left: -90px;
+		width: 70px;
+		height: 70px;
+	}
+	.no-sidebar .comment-content {
+		margin-left: 90px;
+	}
+}
+
+.comment-metadata {
+	margin-top: .2em;
+	padding-bottom: .5em;
+	font-size: .8em;
+	line-height: 1em;
+}
+
+.comment-metadata a {
+	color: #7D7D7D;
+}
+
+.comment-metadata a:hover, .comment-metadata a:focus {
+	border-color: #c3c3c3;
+}
+
+.comment-author {
+	font-size: 1.4em;
+	line-height: 1.3em;
+}
+
+.says {
+	font-size: 80%;
+}
+
+.reply {
+	margin-bottom: 1.5em;
+	text-align: right;
+}
+
+.reply a {
+	display: inline-block;
+	padding: .5em 1.4em;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 85%;
+	color: #000;
+	line-height: 1.3em;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.reply a:hover, .reply a:focus {
+	color: #fff;
+	background: #b51c35;
+	border-color: #b51c35;
+}
+
+.comment-content ol {
+	list-style-type: decimal;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
 
-.bypostauthor {
+.bypostauthor .avatar {
+	box-sizing: content-box;
+	border: 5px solid #b51c35;
+	margin-top: -5px;
+	margin-left: -5px;
+}
+
+/* Comment Form */
+.comment-reply-title {
+	margin-bottom: 1em;
+}
+
+.comment-list .comment-reply-title {
+	text-align: left;
+}
+
+.comment-form {
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	line-height: 1.3em;
+}
+
+.comment-form a {
+	font-weight: 500;
+}
+
+.comment-form .form-submit {
+	text-align: right;
+}
+
+.comment-form .form-submit input {
+	padding: .5em 1.4em;
+	font-size: 85%;
+	color: #000;
+	line-height: 1.3em;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.comment-form .form-submit input:hover, .comment-form .form-submit input:focus {
+	color: #fff;
+	background: #b51c35;
+	border-color: #b51c35;
+}
+
+.comment-form label {
+	width: 33%;
 	display: block;
+	font-style: italic;
+	padding-bottom: .4em;
+}
+
+.comment-form .required {
+	color: #D54E21;
 }
 
 /*--------------------------------------------------------------
@@ -1200,7 +1497,7 @@ button.dropdown-toggle {
 	padding: 1em;
 	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	color: #fff;
-	background-color: #481C1C;
+	background-color: #002254;
 	text-align: center;
 }
 
